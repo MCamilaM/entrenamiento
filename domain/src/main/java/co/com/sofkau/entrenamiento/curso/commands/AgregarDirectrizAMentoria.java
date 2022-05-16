@@ -2,19 +2,19 @@ package co.com.sofkau.entrenamiento.curso.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.entrenamiento.curso.values.CursoId;
-import co.com.sofkau.entrenamiento.curso.values.Directiz;
+import co.com.sofkau.entrenamiento.curso.values.Directriz;
 import co.com.sofkau.entrenamiento.curso.values.MentoriaId;
 
 public class AgregarDirectrizAMentoria extends Command {
 
     private final CursoId cursoId;
     private final MentoriaId mentoriaId;
-    private final Directiz directiz;
+    private final Directriz directriz;
 
-    public AgregarDirectrizAMentoria(CursoId cursoId, MentoriaId mentoriaId, Directiz directiz) {
+    public AgregarDirectrizAMentoria(CursoId cursoId, MentoriaId mentoriaId, Directriz directriz) {
         this.cursoId = cursoId;
         this.mentoriaId = mentoriaId;
-        this.directiz = directiz;
+        this.directriz = directriz;
     }
 
     public CursoId getCursoId() {return cursoId;}
@@ -23,7 +23,7 @@ public class AgregarDirectrizAMentoria extends Command {
         return mentoriaId;
     }
 
-    public Directiz getDirectiz() {
-        return directiz;
+    public Directriz getDirectriz() {
+        return directriz;
     }
 }

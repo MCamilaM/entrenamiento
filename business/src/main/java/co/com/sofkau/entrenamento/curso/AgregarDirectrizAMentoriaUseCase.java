@@ -5,14 +5,14 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofkau.entrenamiento.curso.Curso;
 import co.com.sofkau.entrenamiento.curso.commands.AgregarDirectrizAMentoria;
-import co.com.sofkau.entrenamiento.curso.commands.AgregarMentoria;
+
 
 public class AgregarDirectrizAMentoriaUseCase extends UseCase<RequestCommand<AgregarDirectrizAMentoria>, ResponseEvents> {
     @Override
     public void executeUseCase(RequestCommand<AgregarDirectrizAMentoria> agregarDirectrizAMentoriaRequestCommand) {
         var command = agregarDirectrizAMentoriaRequestCommand.getCommand();
         var curso = Curso.from(command.getCursoId(), repository().getEventsBy(command.getCursoId().value()));
-        curso.agregarDirectrizDeMentoria(command.getMentoriaId(), command.getDirectiz());
+        curso.agregarDirectrizDeMentoria(command.getMentoriaId(), command.getDirectriz());
         emit().onResponse(new ResponseEvents(curso.getUncommittedChanges()));
     }
 }
